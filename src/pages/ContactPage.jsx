@@ -1,159 +1,140 @@
-import React, { useState } from "react";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
-import { toast } from "react-toastify";
+
+import React from "react";
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (
-      !formData.name ||
-      !formData.email ||
-      !formData.subject ||
-      !formData.message
-    ) {
-      toast.error("Please fill all the fields");
-      return;
-    }
-
-    toast.success("Message sent successfully!");
-
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    });
-  };
-
   return (
-    <div className="max-w-6xl mx-auto px-6 py-16">
+    <div className="max-w-6xl mx-auto px-6 py-12">
+
       {/* Header */}
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-slate-800 dark:text-white mb-3">
-          Contact Us
+        <h1 className="text-4xl font-bold text-slate-800 dark:text-white">
+          Get in Touch
         </h1>
 
-        <p className="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
-          Have a question or need help? Feel free to reach out to us.
-          We would love to hear from you.
+        <p className="mt-3 text-slate-500 dark:text-slate-400 max-w-xl mx-auto">
+          Have a question, suggestion, or need help? Send us a message and
+          our team will get back to you soon.
         </p>
       </div>
 
+      {/* Main Section */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Contact Information */}
-        <div className="space-y-5">
-          <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700">
-            <div className="flex items-center gap-4">
-              <div className="p-3 rounded-xl bg-blue-100 dark:bg-blue-500/10">
-                <Mail className="text-blue-600 dark:text-blue-400" size={22} />
+
+        {/* Contact Details */}
+        <div className="space-y-6">
+
+          {/* Email */}
+          <div className="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition">
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-blue-100 dark:bg-blue-500/10">
+                <span className="text-xl">✉️</span>
               </div>
 
               <div>
                 <h3 className="font-semibold text-slate-800 dark:text-white">
-                  Email
+                  Email Us
                 </h3>
-                <p className="text-sm text-slate-500 dark:text-slate-400">
+
+                <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
                   support@example.com
                 </p>
+
+                <p className="text-xs text-slate-400 mt-2">
+                  We usually reply within 24 hours.
+                </p>
               </div>
             </div>
           </div>
 
-          <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700">
-            <div className="flex items-center gap-4">
-              <div className="p-3 rounded-xl bg-green-100 dark:bg-green-500/10">
-                <Phone
-                  className="text-green-600 dark:text-green-400"
-                  size={22}
-                />
+          {/* Phone */}
+          <div className="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition">
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-green-100 dark:bg-green-500/10">
+                <span className="text-xl">📞</span>
               </div>
 
               <div>
                 <h3 className="font-semibold text-slate-800 dark:text-white">
-                  Phone
+                  Call Us
                 </h3>
-                <p className="text-sm text-slate-500 dark:text-slate-400">
+
+                <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
                   +91 98765 43210
                 </p>
-              </div>
-            </div>
-          </div>
 
-          <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700">
-            <div className="flex items-center gap-4">
-              <div className="p-3 rounded-xl bg-purple-100 dark:bg-purple-500/10">
-                <MapPin
-                  className="text-purple-600 dark:text-purple-400"
-                  size={22}
-                />
-              </div>
-
-              <div>
-                <h3 className="font-semibold text-slate-800 dark:text-white">
-                  Location
-                </h3>
-                <p className="text-sm text-slate-500 dark:text-slate-400">
-                  Andhra Pradesh, India
+                <p className="text-xs text-slate-400 mt-2">
+                  Monday - Friday, 9:00 AM - 6:00 PM
                 </p>
               </div>
             </div>
           </div>
+
+          {/* Location */}
+          <div className="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition">
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-purple-100 dark:bg-purple-500/10">
+                <span className="text-xl">📍</span>
+              </div>
+
+              <div>
+                <h3 className="font-semibold text-slate-800 dark:text-white">
+                  Our Location
+                </h3>
+
+                <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
+                  Andhra Pradesh, India
+                </p>
+
+                <p className="text-xs text-slate-400 mt-2">
+                  Available for online support worldwide.
+                </p>
+              </div>
+            </div>
+          </div>
+
         </div>
 
         {/* Contact Form */}
         <div className="lg:col-span-2">
-          <div className="bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-sm border border-slate-200 dark:border-slate-700">
-            <h2 className="text-2xl font-semibold text-slate-800 dark:text-white mb-6">
+          <div className="bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm">
+
+            <h2 className="text-2xl font-semibold text-slate-800 dark:text-white">
               Send us a message
             </h2>
 
-            <form onSubmit={handleSubmit} className="space-y-5">
+            <p className="text-sm text-slate-500 dark:text-slate-400 mt-1 mb-7">
+              Fill out the form below and we'll get back to you shortly.
+            </p>
+
+            <form className="space-y-5">
+
               {/* Name & Email */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+
                 <div>
                   <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                    Name
+                    Full Name
                   </label>
 
                   <input
                     type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="Enter your name"
-                    className="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-800 dark:text-white outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Enter your full name"
+                    className="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-white outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
                   />
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                    Email
+                    Email Address
                   </label>
 
                   <input
                     type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="Enter your email"
-                    className="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-800 dark:text-white outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="you@example.com"
+                    className="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-white outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
                   />
                 </div>
+
               </div>
 
               {/* Subject */}
@@ -164,11 +145,8 @@ export default function ContactPage() {
 
                 <input
                   type="text"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  placeholder="Enter subject"
-                  className="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-800 dark:text-white outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="What is this regarding?"
+                  className="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-white outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
                 />
               </div>
 
@@ -179,28 +157,33 @@ export default function ContactPage() {
                 </label>
 
                 <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
                   rows="6"
-                  placeholder="Write your message here..."
-                  className="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-800 dark:text-white outline-none focus:ring-2 focus:ring-blue-500 resize-none"
-                />
+                  placeholder="Tell us how we can help..."
+                  className="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-white outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition resize-none"
+                ></textarea>
               </div>
 
-              {/* Submit */}
+              {/* Button */}
               <button
                 type="submit"
-                className="w-full md:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-medium transition"
+                className="w-full py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 active:scale-[0.99] text-white font-semibold transition shadow-sm"
               >
-                <Send size={18} />
                 Send Message
               </button>
+
             </form>
           </div>
         </div>
+
       </div>
+
+      {/* Bottom Section */}
+      <div className="mt-10 text-center">
+        <p className="text-sm text-slate-500 dark:text-slate-400">
+          We are always happy to help. Feel free to contact us anytime.
+        </p>
+      </div>
+
     </div>
   );
 }
-
