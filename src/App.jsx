@@ -49,8 +49,8 @@ export default function App() {
             </Routes>
           </main>
           <footer className="bg-slate-200 dark:bg-slate-950 border-t border-slate-300 dark:border-slate-800 text-center py-6 text-slate-600 dark:text-slate-400 text-sm transition-colors duration-300">
-            TravelQuest pavan Application &copy; {new Date().getFullYear()} •
-            Dark/Light Mode Supported
+            TravelQuest Application &copy; {new Date().getFullYear()} •
+            Dark/Light Mode Supported pavan
           </footer>
         </div>
       </div>
