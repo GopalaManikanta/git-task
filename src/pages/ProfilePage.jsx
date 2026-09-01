@@ -12,7 +12,7 @@ export default function ProfilePage() {
           This page is currently empty.
         </p>
       </div>
-      <h1>Satya</h1>
+      <h1>Nani</h1>
     </div>
   );
 }
